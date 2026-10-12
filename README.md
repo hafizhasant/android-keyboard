@@ -47,10 +47,6 @@ All the keyboard itself — the typing engine, layouts, dictionaries, swipe typi
 
 Tone switching and smart edit are not implemented; only Proofread is.
 
-## Building
-
-Run the **build** workflow from the Actions tab. It builds `assembleUnstableDebug` and attaches the APK to a draft release. Submodules are fetched in full, because shallow submodule clones fail against FUTO's GitLab.
-
 ## License
 
 Same license as upstream — see the license file in this repository. Please respect its terms, including its limits on commercial use.
