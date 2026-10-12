@@ -24,7 +24,6 @@ val AllActionsMap = mapOf(
     "settings" to SettingsAction,
     "paste" to PasteAction,
     "proofread" to ProofreadAction,
-    "nano_test" to NanoTestAction,
     "text_edit" to TextEditAction,
     "themes" to ThemeAction,
     "undo" to UndoAction,
