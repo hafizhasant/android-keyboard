@@ -714,4 +714,8 @@ Default is %1$s</string>
     <string name="personal_dictionary_delete_additional_file_text">%1$s will be deleted</string>
     <string name="action_proofread_title">Proofread</string>
     <string name="gemini_settings_title">AI proofreading (Gemini)</string>
+    <string name="action_tone_title">Tone</string>
+    <string name="action_smart_edit_title">Smart Edit</string>
+    <string name="action_tone_title">Tone</string>
+    <string name="action_smart_edit_title">Smart Edit</string>
 </resources>
