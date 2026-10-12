@@ -42,26 +42,13 @@ val ThemeOptions = mapOf(
 
     DynamicSystemTheme.key to DynamicSystemTheme,
     DynamicDarkTheme.key to DynamicDarkTheme,
-    DynamicLightTheme.key to DynamicLightTheme,
 
-    ClassicMaterialDark.key to ClassicMaterialDark,
-    ClassicMaterialLight.key to ClassicMaterialLight,
     AMOLEDDarkPurple.key to AMOLEDDarkPurple,
 
-    Sunflower.key to Sunflower,
-    Snowfall.key to Snowfall,
-    SteelGray.key to SteelGray,
-    Emerald.key to Emerald,
-    CottonCandy.key to CottonCandy,
 
-    DeepSeaLight.key to DeepSeaLight,
-    DeepSeaDark.key to DeepSeaDark,
 
     Gradient1.key to Gradient1,
-    VoiceInputTheme.key to VoiceInputTheme,
     HotDog.key to HotDog,
-    DevTheme.key to DevTheme,
-    HighContrastYellow.key to HighContrastYellow,
     CatppuccinMocha.key to CatppuccinMocha,
 )
 
