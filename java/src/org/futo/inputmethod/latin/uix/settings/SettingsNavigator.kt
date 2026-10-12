@@ -46,6 +46,7 @@ import org.futo.inputmethod.latin.uix.settings.pages.LanguageSettingsLite
 import org.futo.inputmethod.latin.uix.settings.pages.LanguagesScreen
 import org.futo.inputmethod.latin.uix.settings.pages.LongPressMenu
 import org.futo.inputmethod.latin.uix.settings.pages.MiscMenu
+import org.futo.inputmethod.latin.uix.settings.pages.GeminiMenu
 import org.futo.inputmethod.latin.uix.settings.pages.NumberRowSettingMenu
 import org.futo.inputmethod.latin.uix.settings.pages.PaymentScreen
 import org.futo.inputmethod.latin.uix.settings.pages.PaymentThankYouScreen
@@ -109,6 +110,7 @@ val SettingsMenus = listOf(
     ActionsScreen,
     HelpMenu,
     MiscMenu,
+    GeminiMenu,
     CreditsScreenLite,
     IMESettingsMenu
 ) + AllActions.mapNotNull { it.settingsMenu } + SettingsByLanguage.values

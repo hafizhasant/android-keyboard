@@ -98,6 +98,13 @@ val HomeScreenLite = UserSettingsMenu(
             icon = R.drawable.themes
         ),
 
+        userSettingNavigationItem(
+            title = R.string.gemini_settings_title,
+            style = NavigationItemStyle.HomeSecondary,
+            navigateTo = "gemini",
+            icon = R.drawable.icon_spellcheck
+        ),
+
 
         userSettingNavigationItem(
             title = R.string.help_menu_title,

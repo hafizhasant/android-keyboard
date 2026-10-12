@@ -393,3 +393,12 @@ val SHOW_EMOJI_SUGGESTIONS = SettingsKey(
     key = booleanPreferencesKey("suggestEmojis"),
     default = true
 )
+val GEMINI_API_KEY = SettingsKey(
+    key = stringPreferencesKey("geminiApiKey"),
+    default = ""
+)
+
+val GEMINI_MODEL = SettingsKey(
+    key = stringPreferencesKey("geminiModel"),
+    default = ""
+)
