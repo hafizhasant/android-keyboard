@@ -716,6 +716,4 @@ Default is %1$s</string>
     <string name="gemini_settings_title">AI proofreading (Gemini)</string>
     <string name="action_tone_title">Tone</string>
     <string name="action_smart_edit_title">Smart Edit</string>
-    <string name="action_tone_title">Tone</string>
-    <string name="action_smart_edit_title">Smart Edit</string>
 </resources>

@@ -26,8 +26,6 @@ val AllActionsMap = mapOf(
     "proofread" to ProofreadAction,
     "tone" to ToneAction,
     "smart_edit" to SmartEditAction,
-    "tone" to ToneAction,
-    "smart_edit" to SmartEditAction,
     "text_edit" to TextEditAction,
     "themes" to ThemeAction,
     "undo" to UndoAction,
