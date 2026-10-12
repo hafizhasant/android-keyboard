@@ -14,7 +14,7 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
-      - uses: android-actions/setup-android@v3
+      - run: "yes | sdkmanager --licenses || true"
       - run: ./gradlew assembleUnstableDebug
       - run: gh release create "build-${{ github.run_number }}" $(find . -name '*.apk' -path '*outputs*') --generate-notes
         env:
