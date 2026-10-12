@@ -16,6 +16,6 @@ jobs:
           java-version: 17
       - run: "yes | sdkmanager --licenses || true"
       - run: ./gradlew assembleUnstableDebug
-      - run: gh release create "build-${{ github.run_number }}" $(find . -name '*.apk' -path '*outputs*') --generate-notes
+      - run: gh release create "build-${{ github.run_number }}" --draft $(find . -name '*.apk' -path '*outputs*') --generate-notes
         env:
           GH_TOKEN: ${{ github.token }}
