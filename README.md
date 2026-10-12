@@ -17,7 +17,7 @@ All the keyboard itself — the typing engine, layouts, dictionaries, swipe typi
   - With text selected, it proofreads the selection.
   - With nothing selected, it proofreads the text before the cursor on the current line (up to about 300 characters).
   - The result replaces the text in place.
-- **Gemini settings page**: Settings → *AI proofreading (Gemini)* has a field for your API key and an optional model name (default `gemini-3.1-flash-lite`).
+- **Gemini settings page**: Settings → *AI proofreading (Gemini)* has a field for your API key and an optional model name (default `gemini-3.5-flash-lite`).
 - **Offline fallback**: if there is no key, no connection or the request fails, it falls back to a simple local pass that collapses repeated spaces and capitalises sentence starts, and shows a short message saying what went wrong.
 - **Status messages and a small local log** (`proofread.log` in the app's private storage) for troubleshooting.
 - **CI build**: a GitHub Actions workflow (`build.yml`, run manually) that builds the `unstable` debug APK and publishes it as a draft release.

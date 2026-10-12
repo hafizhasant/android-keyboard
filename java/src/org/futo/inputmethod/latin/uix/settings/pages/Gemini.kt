@@ -15,7 +15,7 @@ val GeminiMenu = UserSettingsMenu(
             SettingTextField("Gemini API key", "Paste your key from aistudio.google.com", GEMINI_API_KEY)
         },
         userSettingDecorationOnly {
-            SettingTextField("Model (optional)", "gemini-3.1-flash-lite", GEMINI_MODEL)
+            SettingTextField("Model (optional)", "gemini-3.5-flash-lite", GEMINI_MODEL)
         },
     )
 )
