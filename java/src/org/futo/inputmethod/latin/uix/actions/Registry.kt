@@ -23,6 +23,7 @@ val AllActionsMap = mapOf(
     "emoji" to EmojiAction,
     "settings" to SettingsAction,
     "paste" to PasteAction,
+    "proofread" to ProofreadAction,
     "text_edit" to TextEditAction,
     "themes" to ThemeAction,
     "undo" to UndoAction,
@@ -264,7 +265,7 @@ fun String.toActionList(): List<Action> = split(",").mapNotNull { AllActionsMap[
 val DefaultActionSettings = mapOf(
     ActionCategory.ActionKey to listOf(EmojiAction),
     ActionCategory.PinnedKey to listOf(),
-    ActionCategory.Favorites to listOfNotNull(if(IsDebug) MemoryDebugAction else null, SwitchLanguageAction, UndoAction, RedoAction, TextEditAction, ClipboardHistoryAction, ThemeAction, KeyboardModeAction),
+    ActionCategory.Favorites to listOfNotNull(if(IsDebug) MemoryDebugAction else null, SwitchLanguageAction, UndoAction, RedoAction, TextEditAction, ClipboardHistoryAction, ProofreadAction, ThemeAction, KeyboardModeAction),
     ActionCategory.More to listOf(), // Remaining actions get populated automatically by ensureWellFormed
     ActionCategory.Disabled to listOf(MemoryDebugAction, VoiceInputAction, SystemVoiceInputAction, BugViewerAction)
 )
