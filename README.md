@@ -1,54 +1,56 @@
-# FUTO Keyboard
+# FUTO Keyboard — AI proofreading fork
 
-The goal is to make a good modern keyboard that stays offline and doesn't spy on you. This keyboard is a fork of [LatinIME, The Android Open-Source Keyboard](https://android.googlesource.com/platform/packages/inputmethods/LatinIME), with significant changes made to it.
+A personal fork of [FUTO Keyboard](https://github.com/futo-org/android-keyboard) that adds a one-tap **Proofread** button powered by the Gemini API, and removes a few things I don't use.
 
-Check out the [FUTO Keyboard website](https://keyboard.futo.tech/) for downloads and more information.
+> Unofficial. Not affiliated with or endorsed by FUTO. Built for personal, non-commercial use under the original license (see the license file in this repo).
 
-The code is licensed under the [FUTO Source First License 1.1](LICENSE.md).
+## Thanks
 
-## Issue tracking and contributing
+All the keyboard itself — the typing engine, layouts, dictionaries, swipe typing, settings and UI — is the work of **FUTO** and the FUTO Keyboard contributors. This fork only adds and removes a few pieces on top of their work.
 
-Please check the GitHub repository to report issues: [https://github.com/futo-org/android-keyboard/](https://github.com/futo-org/android-keyboard/)
+- Upstream (GitHub mirror and issue tracker): https://github.com/futo-org/android-keyboard
+- Upstream source: https://gitlab.futo.org/keyboard/latinime
 
-The source code is hosted on our [internal GitLab](https://gitlab.futo.org/keyboard/latinime) and mirrored to [GitHub](https://github.com/futo-org/android-keyboard/). As registration is closed on our internal GitLab, we use GitHub instead for issues and pull requests.
+## What this fork adds
 
-If you want to help translate the app, please do so via our Pontoon instance: https://i18n-keyboard.futo.org/
+- **Proofread action**: a spellcheck-icon button in the action row. It fixes spelling, grammar, punctuation and capitalisation using Google's Gemini API, in the language you wrote in.
+  - With text selected, it proofreads the selection.
+  - With nothing selected, it proofreads the text before the cursor on the current line (up to about 300 characters).
+  - The result replaces the text in place.
+- **Gemini settings page**: Settings → *AI proofreading (Gemini)* has a field for your API key and an optional model name (default `gemini-3.1-flash-lite`).
+- **Offline fallback**: if there is no key, no connection or the request fails, it falls back to a simple local pass that collapses repeated spaces and capitalises sentence starts, and shows a short message saying what went wrong.
+- **Status messages and a small local log** (`proofread.log` in the app's private storage) for troubleshooting.
+- **CI build**: a GitHub Actions workflow (`build.yml`, run manually) that builds the `unstable` debug APK and publishes it as a draft release.
 
-Due to custom license, pull requests to this repository require signing a [CLA](https://cla.futo.org/) which you can do after opening a PR. Contributions to the [layouts repo](https://github.com/futo-org/futo-keyboard-layouts) don't require CLA as they're Apache-2.0
+## What this fork removes or changes
 
-Please do not submit AI-generated pull requests, as these tend to make the codebase more difficult to understand. Pull requests made with clear heavy use of AI may be closed without comment. Please also avoid using AI to write issues, and try to explain it in your own words instead.
+- Removed the payment and "paid version" screens and notices from the settings home.
+- Voice input is disabled by default and its settings entry is removed (the underlying module is still in the code so everything keeps compiling).
+- Removed 13 built-in themes from the theme picker (AOSP Material Dark/Light, Sunflower, Snowfall, Steel Gray, Emerald, Cotton Candy, Deep Sea Light/Dark, FUTO VI, Construction, High Contrast Yellow, Dynamic Light).
+- Hid the app icon from the launcher.
+- Added the `INTERNET` permission. Stock FUTO Keyboard has none, so this fork can reach the Gemini API.
 
-## Layouts
+## Using it
 
-If you want to contribute layouts, check out the [layouts repo](https://github.com/futo-org/futo-keyboard-layouts).
+1. Install the APK and enable the keyboard in system settings (Languages & input → On-screen keyboard → Manage keyboards). The launcher icon is hidden, so there is no app to open.
+2. Create a free API key at https://aistudio.google.com and paste it into the keyboard's settings under *AI proofreading (Gemini)*.
+3. Add the Proofread button to your action row from the keyboard's action settings if it is not there already.
+
+## Privacy
+
+- Text is sent to the Gemini API **only when you tap Proofread**, never while typing.
+- The key is stored in the keyboard's settings on your device.
+- On Google's free tier, requests may be used by Google to improve its products. Do not proofread passwords, banking details or other private text.
+- The model name can be changed in settings if Google retires the default.
+
+## Not done yet
+
+Tone switching and smart edit are not implemented; only Proofread is.
 
 ## Building
 
-When cloning the repository, you must perform a recursive clone to fetch all dependencies:
-```
-git clone --recursive https://gitlab.futo.org/keyboard/latinime.git
-```
+Run the **build** workflow from the Actions tab. It builds `assembleUnstableDebug` and attaches the APK to a draft release. Submodules are fetched in full, because shallow submodule clones fail against FUTO's GitLab.
 
-If you forgot to specify recursive clone, use this to fetch submodules:
-```
-git submodule update --init --recursive
-```
+## License
 
-You can then open the project in Android Studio and build it that way, or use gradle commands:
-```
-./gradlew assembleUnstableDebug
-./gradlew assembleStableRelease
-```
-
-## APK signing
-
-For official FUTO Keyboard versions, you can verify the APK's signing key fingerprint for integrity.
-
-```
-Signing key fingerprint for all versions except Google Play:
-
-MD5: 3A:BB:71:C6:BB:E4:92:27:B1:E3:5D:81:01:48:6A:B0
-SHA1: 5D:15:B3:6E:C9:6A:96:28:41:09:DD:62:93:0D:9C:39:9F:5F:06:43
-SHA-256: 74:3F:AD:58:64:AB:C4:26:50:0B:2D:C2:C4:7C:8A:D3:24:CB:CD:16:03:3F:80:16:99:48:41:35:63:74:F9:95
-
-```
+Same license as upstream — see the license file in this repository. Please respect its terms, including its limits on commercial use.
